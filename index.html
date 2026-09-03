@@ -93,8 +93,6 @@
     }
 
     main {
-      display: grid;
-      place-items: center;
       padding: 72px 0 92px;
     }
 
@@ -170,6 +168,41 @@
       text-transform: uppercase;
     }
 
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 22px;
+    }
+
+    .about-card {
+      min-height: 220px;
+      padding: clamp(28px, 4vw, 46px);
+      border: 1px solid var(--line);
+      background: rgba(12, 16, 29, .72);
+    }
+
+    .about-card h2 {
+      margin: 0 0 16px;
+      font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+    }
+
+    .about-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .about-number {
+      display: block;
+      margin-bottom: 24px;
+      color: var(--pink);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+    }
+
     footer {
       border-top: 1px solid var(--line);
       letter-spacing: normal;
@@ -184,6 +217,8 @@
       .hero { padding: 38px 27px 42px 32px; }
       h1 { font-size: clamp(3.55rem, 22vw, 6rem); }
       h2 { margin-top: 30px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-card { min-height: auto; }
     }
 
     @media (prefers-reduced-motion: no-preference) {
@@ -213,6 +248,27 @@
         </p>
         <div class="coming-soon">Coming soon</div>
       </section>
+
+      <div class="about-grid">
+        <section class="about-card" aria-labelledby="about-yod-si">
+          <span class="about-number">01 / PRODUCT</span>
+          <h2 id="about-yod-si">About Yod-Si</h2>
+          <p>
+            Yod-Si is a pixel creation studio designed to help game creators
+            draw, organize, animate, and prepare pixel assets through one
+            structured workflow.
+          </p>
+        </section>
+
+        <section class="about-card" aria-labelledby="about-kaminari">
+          <span class="about-number">02 / STUDIO</span>
+          <h2 id="about-kaminari">About KAMINARI</h2>
+          <p>
+            KAMINARI is an independent software studio focused on creating
+            practical and thoughtfully designed tools for game creators.
+          </p>
+        </section>
+      </div>
     </main>
 
     <footer>
